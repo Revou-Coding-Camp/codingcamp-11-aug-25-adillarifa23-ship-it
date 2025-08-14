@@ -53,6 +53,7 @@ function handleFormSubmit(e) {
   e.preventDefault();
   const name = $("#name").value.trim();
   const email = $("#email").value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked')?.value || "-";
   const phone = $("#phone").value.trim().replace(/\D/g, "");
   const message = $("#message").value.trim();
 
@@ -97,6 +98,7 @@ function handleFormSubmit(e) {
     "=== Message Us Form Data ===",
     `Name    : ${name}`,
     `Email   : ${email}`,
+    `Gender  : ${gender}`,
     `Phone   : ${phone}`,
     `Message : ${message}`,
   ].join("\n");
